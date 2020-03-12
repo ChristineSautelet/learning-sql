@@ -1,0 +1,8 @@
+table, td{
+    background-color: lightblue;
+    border: 2px solid black;
+    width: 35%;
+}
+th{
+    text-align: center;
+}
