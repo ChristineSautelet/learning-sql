@@ -1,0 +1,58 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ajouter une randonnée</title>
+	<link rel="stylesheet" href="css/basics2.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+	<a href="read.php">Liste des données</a>
+	<h1>Ajouter</h1>
+
+	<form action="ajout.php" method="post">
+		<div>
+			<label for="name">Name</label>
+			<input type="text" name="name" value="" required>
+		</div>
+
+		<div>
+			<label for="difficulty">Difficulté</label>
+			<select name="difficulty">
+				<option value="très facile">Très facile</option>
+				<option value="facile">Facile</option>
+				<option value="moyen">Moyen</option>
+				<option value="difficile">Difficile</option>
+				<option value="très difficile">Très difficile</option>
+			</select>
+		</div>
+
+		<div>
+			<label for="distance">Distance</label>
+			<input type="number" step="any" name="distance" value="" required>
+		</div>
+		<div>
+			<label for="duration">Durée</label>
+			<input type="time" name="duration" value="" required>
+		</div>
+		<div>
+			<label for="height_difference">Dénivelé</label>
+			<input type="number" name="height_difference" value="" required>
+		</div>
+		<button type="submit" name="button">Envoyer</button>
+	</form>
+
+	<?php if(array_key_exists('success',$_SESSION)):?>
+		<br><br>
+		<span class="confirm">La randonnée a été ajoutée avec succès</span>
+	<?php endif;?>
+
+</body>
+</html>
+
+<?php
+unset($_SESSION['success']);
+?>

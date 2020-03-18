@@ -15,6 +15,7 @@ $resultat = $bdd->query('SELECT * FROM meteo ORDER BY ville ASC');
 </head>
 <body>
 	<div class="container">
+		<h1>Météo en Belgique</h1>
 		<br/><br/><br/>
 		<form action="suppression.php" method="POST">
 		<div class="row">
